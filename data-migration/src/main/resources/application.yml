@@ -1,0 +1,58 @@
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url:
+    username: postgres
+    password: postgres
+    #配置初始化大小、最小、最大
+    initial-size: 1
+    min-idle: 1
+    max-active: 20
+    #配置获取连接等待超时的时间
+    max-wait: 200000
+    #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    time-between-eviction-runs-millis: 200000
+    #配置一个连接在池中最小生存的时间，单位是毫秒
+    min-evictable-idle-time-millis: 300000
+    validation-query: SELECT 'x'
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    #打开PSCache，并且指定每个连接上PSCache的大小
+    pool-prepared-statements: false
+    max-pool-prepared-statement-per-connection-size: 20
+    #配置监控统计拦截的filters
+    filters: stat
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+  quartz:
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: clusteredScheduler
+            instanceId: AUTO
+          jobStore:
+            class: org.springframework.scheduling.quartz.LocalDataSourceJobStore
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+            tablePrefix: qrtz_
+            isClustered: false
+            clusterCheckinInterval: 10000
+            useProperties: false
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 10
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: never
+datax:
+  home-path: /opt/module/datax/bin/
+  jvm-param:
+  json-path: /opt/module/datax/script/
+
