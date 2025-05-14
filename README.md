@@ -1,8 +1,8 @@
-# RDSP微服务
+# 微服务
 
 ## 模块规划
 ```lua
-rdsp-cloud -- 主POM
+ -- 主POM
 │  ├─api-server -- 接口服务POM
 │  │  ├─api-commons -- Api工具类
 │  │  ├─api-provider-- 接口服务的提供者
