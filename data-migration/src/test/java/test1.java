@@ -1,11 +1,8 @@
-import com.rdsp.data.migration.database.table.TableColumn;
+import com.dataxSchedule.data.migration.database.table.TableColumn;
 import org.apache.commons.lang.time.DateUtils;
 
-import java.io.File;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class test1 {
