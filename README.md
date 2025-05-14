@@ -7,8 +7,8 @@
 │  │  ├─api-commons -- Api工具类
 │  │  ├─api-provider-- 接口服务的提供者
 │  │  ├─api-auth -- 接口授权、鉴权模块[端口] 
-│  │─rdsp-gateway -- 网关模块
-│  ├─rdsp-cloud-server -- RDSP后台主POM
+│  │─-gateway -- 网关模块
+│  ├─-cloud-server -- 后台主POM
 │  │  ├─xxx -- xxx 模块一[端口]
 │  │  ├─xxx -- xxx 模块二[端口]
 │  │  ├─xxx -- xxx 模块三[端口]
